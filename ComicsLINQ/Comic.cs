@@ -21,6 +21,18 @@ namespace ComicsLINQ
             new Comic { Name = "The Death of the Object", Issue = 97 },
         };
 
+        public static readonly IReadOnlyDictionary<int, decimal> Prices = new Dictionary<int, decimal>
+        {
+            {6, 3600M },
+            {19, 500M},
+            {36, 650M},
+            {57, 13525M},
+            {68, 250M},
+            {74, 75M},
+            {83, 25.75M},
+            {97, 35.25M},
+        };
+
         public string Name { get; set; }
         public int Issue { get; set; }
 
