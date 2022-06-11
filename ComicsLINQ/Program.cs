@@ -7,16 +7,13 @@ namespace ComicsLINQ
     {
         static void Main(string[] args)
         {
-            IEnumerable<Comic> mostExpensive =
+            IEnumerable<string> mostExpensiveComicDescriptions =
                 from comic in Comic.Catalog
                 where Comic.Prices[comic.Issue] > 500
-                orderby -Comic.Prices[comic.Issue]
-                select comic;
+                orderby Comic.Prices[comic.Issue] descending
+                select $"{comic} jest wart {Comic.Prices[comic.Issue]:c}";
 
-            foreach (Comic comic in mostExpensive)
-            {
-                Console.WriteLine($"{comic} jest wart {Comic.Prices[comic.Issue]:c}.");
-            }
+           
         }
     }
 }
